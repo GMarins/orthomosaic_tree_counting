@@ -16,6 +16,8 @@ input image is. Since we have an array of (x,y) tuples and close points may be i
 that the filter is well configured: having the tuples sorted *([(x1,y1),(x2,y2),...], y1 < y2*; as in the normal output of the OpenCV function) 
 and checking each position with respect to N positions forward, being N a percentage of the size of the array where it is the most probable range for a repeted occurence to happen.
 
+If maximum precision is not necessary, it is also available an O(n) filter in *option = 1*. This option, however, needs improvements.
+
 For what I could conclude from my study, is that the best way to improve would be to use another feature of OpenCV: the usage of 
 Haar Cascades ( [Example](http://docs.opencv.org/trunk/d7/d8b/tutorial_py_face_detection.html)). OpenCV already comes 
 with some cascades for face recognition. For detecting the trees in the given example, it would be necessary to create a cascade from zero
