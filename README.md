@@ -55,7 +55,7 @@ loc_filtered = filterMatches(loc, option = 1) #WARNING: option 2 may take much l
 
 ```
 The filter is necessary because depending on the image and on the template, many repeating occurences and false positives may be
-returned. I suggest you try the three options to find the one that fits the most. Desired precision is an aspect to consider; option 1 is much faster than option 2, but the results are worse. 
+returned. I suggest you try the three options to find the one that fits the most. Desired precision is an aspect to consider; option 1 is faster than option 2, but the results are much worse. 
 More information concerning the filter are provided in the docstring of the **filterMatches** function. 
 
 In the given example, the best result came from the input being the image in greyscale only, with no extra filters aplied but the blur
