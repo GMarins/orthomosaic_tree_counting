@@ -1,0 +1,20 @@
+C:\Users\gmcma\PixForce>python pix.py example.tif template.tif                                                          
+Process Initiated                                                                                                                                                                                                                              
+Generating histogram...                                                                                                                                                                                                                        
+Equalizing contrast...                                                                                                                                                                                                                          
+Filterting...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                     
+                                                                                             
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+-----------------------------------      
+Matching circles             
+Occurences found: 847        
+
+-----------------------------------           
+Matching templates
+Occurences found: 884       
+Generating output...   
+-----------------------------------
+
+Process finalized in 8.27 seconds        
+Press ENTER to exit                                                                                                                                                                                                                                                          
