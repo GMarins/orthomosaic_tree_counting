@@ -14,6 +14,7 @@ I strongly suggest the reading of the OpenCV [documentation](http://docs.opencv.
 Simply enter in the console 
 
 ```
+
 python pix.py imagename.ext templatename.ext
 
 ```
@@ -69,11 +70,26 @@ to the image has proven to return a good result (not as good as the template mat
 from the background preserving the edges of the objects. To do so, you will eventually have to change some parameters. 
 Special attention to:
 
+```python
 
+blur = cv2.bilateralFilter(img,-1,0.02*diag,9)
 
 ```
-Give an example
+
+and to
+
+```python
+
+circles = cv2.HoughCircles(img, cv2.HOUGH_GRADIENT, 1,18,param1=1,param2=18,minRadius=10,maxRadius=17)
+
 ```
+
+The first is inside the **bilateralFilter** function. More about the parameters can be found [here] (http://docs.opencv.org/2.4/modules/imgproc/doc/filtering.html#bilateralfilter). For the sigmaColor, 2% of the diagonal has proven to
+be good enough. The sigmaSpace will depend on execution time wanted and the hardware. Increasing it can make the program run slower and
+the results from using the default value(sigmaSpace=9) has proven to be satisfactory.
+
+The second is inside the **detectCircles** functions. More about the parameters can be found [here](http://docs.opencv.org/2.4/modules/imgproc/doc/feature_detection.html?highlight=houghcircles#houghcircles). The param2 is the one that
+causes the most noticiable changes. You may take some time to find the ideal values.
 
 ### And coding style tests
 
