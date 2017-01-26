@@ -20,7 +20,7 @@ If maximum precision is not necessary, it is also available an O(n) filter in *o
 
 For what I could conclude from my study, is that the best way to improve would be to use another feature of OpenCV: the usage of 
 Haar Cascades ( [Example](http://docs.opencv.org/trunk/d7/d8b/tutorial_py_face_detection.html)). OpenCV already comes 
-with some cascades for face recognition. For detecting the trees in the given example, it would be necessary to create a cascade from zero
+with some cascades for face recognition. For detecting the trees in the given example, it would be necessary to create and train a cascade from zero
 using machine learning algorithms as proposed [here](http://johnallen.github.io/opencv-object-detection-tutorial/). Although it may be
 costly (it would probably require some hours to create the cascade in a server), it is a more trustable approach than circle and template
 matching since it trains the machine with  thousands of "positives" and  "negatives" of the results desired and it is fast and scalable.
