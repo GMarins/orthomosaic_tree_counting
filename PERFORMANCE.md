@@ -12,8 +12,9 @@ the link above, *NumPy* operations may take 20x to 100x longer to execute that P
 
 Although the script can run with a good perfomance when the desired result does not require full precision, the result can be quite
 different when required. The *option = 2* in **filterMatches** function is O(n²), making the execution increasingly slower the bigger the
-input image is. Since we an array of (x,y) tuples and close points may be in distant positions in the array (even if sorted in x or y) , 
-is difficult to find an intuitive alternative nested loops.
+input image is. Since we have an array of (x,y) tuples and close points may be in distant positions in the array (even if sorted in x or y) , is difficult to find an intuitive alternative to nested loops. However, the execution time of *option = 2* can be acceptable provided
+that the filter is well configured: having the tuples sorted *([(x1,y1),(x2,y2),...], y1 < y2*; normal output of the OpenCV function) 
+and checking each position with respect to n positions forward, being n a percentage of the size of the array.
 
 For what I could conclude from my study, is that the best way to improve would be to use another feature of OpenCV: the usage of 
 Haar Cascades ( [Example](http://docs.opencv.org/trunk/d7/d8b/tutorial_py_face_detection.html)). OpenCV already comes 
