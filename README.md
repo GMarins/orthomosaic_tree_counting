@@ -91,21 +91,6 @@ the results from using the default value(sigmaSpace=9) has proven to be satisfac
 The second is inside the **detectCircles** functions. More about the parameters can be found [here](http://docs.opencv.org/2.4/modules/imgproc/doc/feature_detection.html?highlight=houghcircles#houghcircles). The param2 is the one that
 causes the most noticiable changes. You may take some time to find the ideal values.
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-
-
-
-
-
-
-
 
 ## Acknowledgments
 
