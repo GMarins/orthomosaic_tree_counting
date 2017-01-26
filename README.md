@@ -18,7 +18,7 @@ Simply enter in the console
 python pix.py imagename.ext templatename.ext
 
 ```
-Since one of the methods require a template, you can simply get it from the image that you want to analyse in the first execution or 
+Since one of the methods requires a template, you can simply get it from the image that you want to analyse in the first execution or 
 from one of the outputs provided by the filters.
 
 ### Prerequisites
