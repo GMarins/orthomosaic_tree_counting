@@ -8,7 +8,7 @@ Many OpenCV functions are already optimized using some features. More about the 
 
 Even though I did not have access to what happens behind the OpenCV funcionts, I have tried to avoid using features that would increase
 the execution time. I have avoided using *NumPy* functions where there where alternatives in the Pythons' *math* library. As stated in
-the link above, *NumPy* operations may take 20x to 100x longer to execute that Python native scripts.
+the link above, *NumPy* operations may take 20x to 100x longer to execute than Python native scripts.
 
 Although the script can run with a good perfomance when the desired result does not require full precision, the result can be quite
 different when required. The *option = 2* in **filterMatches** function is O(n²), making the execution increasingly slower the bigger the
