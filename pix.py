@@ -142,8 +142,8 @@ def filterMatches(matchingResults, option = 2):
         matchingPoints.sort()
         while i < len(matchingPoints) - 1: #Since the array is sorted, O(n)
             j = i+1
-            while j < i + 800 and j != len(matchingPoints): #Recomend a step of ~2% of the size of the array
-                if norm(matchingPoints[i],matchingPoints[j]) < 1000:
+            while j < i + 900 and j != len(matchingPoints): #Recomend a step of ~2% of the size of the array
+                if norm(matchingPoints[i],matchingPoints[j]) < 1000: #Average squared distance between two adjacent trees
                     matchingPoints.pop(j)
                 else:
                     j += 1
