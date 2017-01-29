@@ -85,8 +85,9 @@ def templateMatchingMethod(img_input,template):
 
     loc = np.where(result >= threshold) #Outputs a tuple of np.ndarrays
     loc_filtered = filterMatches(loc, option = 2) #WARNING: option 2 may take much longer to execute
+                                                # Outputs an array of tuples (xy coordinates)
 
-    for pt in loc_filtered: #* operator unzip the tuples
+    for pt in loc_filtered:
         cv2.rectangle(colored_img,pt,(pt[0] + w, pt[1] + h), (0,255,0), 3)
     cv2.imwrite('templatesMatched.tif',colored_img)
     print("Occurences found: %d" %(len(loc_filtered)))
@@ -111,17 +112,17 @@ def filterMatches(matchingResults, option = 2):
         Hence, this option return the array with a step of 8 as an average of repeated points per tree obtained after
         some tests (it needs more studies)
 
-        If option is 2 the function will check each point with respect to 800 positions forward.
+        If option is 2 the function will check each point with respect to 900 positions forward.
         Although this method is slower (O(n^2)), the algorithm reduces the size of
         the array during the execution and it is much more accurate the option 1. For the
         example given their execution time are almost the same
 
-        Option 3 is obsolete, rudimental and non-optimized. Return the same result as option 2 but with a much longer execution time
-        (~5x)
+        Option 3 is obsolete, rudimental and non-optimized. Return the same result as option 2 but with a
+        much longer execution time (~5x) since it checks the whole each tuple with respect to any tuple ahead
 
         '''
     matchings = list(matchingResults[::-1])
-    matchingPoints = zip(*matchings)
+    matchingPoints = zip(*matchings) #* operator unzip the tuples
     matchingPoints = list(matchingPoints)
 
     if option == 0:
@@ -142,8 +143,8 @@ def filterMatches(matchingResults, option = 2):
         matchingPoints.sort()
         while i < len(matchingPoints) - 1: #Since the array is sorted, O(n)
             j = i+1
-            while j < i + 900 and j != len(matchingPoints): #Recommended a step of ~2% of the size of the array
-                if norm(matchingPoints[i],matchingPoints[j]) < 1000: #Average squared distance between two adjacent trees
+            while j < i + 900 and j != len(matchingPoints): #Recomend a step of ~2% of the size of the array
+                if norm(matchingPoints[i],matchingPoints[j]) < 1000:
                     matchingPoints.pop(j)
                 else:
                     j += 1
